@@ -8,7 +8,7 @@ export default class ListaT {
     }
 
     _initTables() {
-        let nTalleres = JSON.parse (localStorage.getItem("talleres"));
+        let nTalleres = JSON.parse(localStorage.getItem("talleres"));
         if (nTalleres === null) {
             return;
         }

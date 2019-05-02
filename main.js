@@ -6,6 +6,8 @@ class Main {
         this._listaT = new ListaT(document.querySelector("#listado"));
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
+            let form = document.querySelector("#form");
+            if (form.checkValidity() === true){
 
             var nombre = document.querySelector("#nT");
             var fechaI = document.querySelector("#fechaInicio");
@@ -24,6 +26,8 @@ class Main {
             let taller = new Talleres(objTalleres);
 
             this._listaT.addTaller(taller);
+        }
+        form.classList.add("was-validated");
 
         })
     }
