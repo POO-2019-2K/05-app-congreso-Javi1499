@@ -1,17 +1,34 @@
-var nombreT = document.querySelector("#nT");
-var fechaI = document.querySelector("#fechaInicio");
-var fechaF = document.querySelector("#fechaFinal");
-var lugares = document.querySelector("#lugares");
-var listado = document.querySelector("#listado");
-var numT = 0
-console.log(nombreT);
-document.querySelector("#btnAdd").addEventListener("click", () =>{
-    numT++;
+import ListaT from "./ListaT.js";
+import Talleres from "./Talleres.js"
 
-    
+class Main {
+    constructor() {
+        this._listaT = new ListaT(document.querySelector("#listado"));
 
-listado = 'El taller ' + nombreT.value + ' estará disponible del ' + fechaI.value + ' al ' + fechaF.value + ' y tiene ' + lugares.value + ' lugares disponibles';
+        document.querySelector("#btnAdd").addEventListener("click", () => {
+
+            var nombre = document.querySelector("#nT");
+            var fechaI = document.querySelector("#fechaInicio");
+            var fechaF = document.querySelector("#fechaFinal");
+            var duracion = document.querySelector("#duracion");
+            var lugares = document.querySelector("#lugares");
+
+            let objTalleres = {
+                nombre: nombre,
+                fechaI: fechaI,
+                fechaF: fechaF,
+                duracion: duracion,
+                lugares: lugares
+            }
+
+            let taller = new Talleres(objTalleres);
+
+            this._listaT.addTaller(taller);
+
+        })
+    }
 
 
+}
 
-});
+let m = new Main();
