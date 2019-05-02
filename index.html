@@ -18,28 +18,38 @@
     <div class="container-fluid">
         <div class="row justify-content-between border">
             <div class="col-4 border bg-light rounded">
-                <form id="form" class="form">
+                <form id="form" class="form" class="col-12 needs-validation" validate>
                     <h2>Registro de Talleres</h2>
 
                     <div class="form-group">
                         <label for="nombreTaller">Nombre de Taller</label>
-                        <input required class="form-control" id="nT" type="text">
+                        <input class="form-control" id="nT" placeholder="Futbol" type="text" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="fechaDeInicio">Fecha de Inicio</label>
-                        <input required class="form-control" id="fechaInicio" type="date">
+                        <input class="form-control" id="fechaInicio" type="date" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="fechaDeFin">Fecha de Finalización</label>
-                        <input required class="form-control" id="fechaFinal" type="date">
+                        <input class="form-control" id="fechaFinal" type="date" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="duracion">Duración</label>
-                        <input required class="form-control" id="duracion" type="number">
+                        <input class="form-control" id="duracion" type="number" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="lugares">Lugares disponibles</label>
-                        <input required class="form-control" id="lugares" type="number">
+                        <input  class="form-control" id="lugares" type="number" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
 
 
@@ -56,19 +66,27 @@
 
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input required class="form-control" id="nombreP" type="text"/>
+                        <input required class="form-control" id="nombreP" type="text" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="Correo">Correo</label>
-                        <input required class="form-control" id="correo" type="email"/>
+                        <input required class="form-control" id="correo" type="email" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="fechaNacimiento">Fecha de nacimiento</label>
-                        <input required class="form-control" id="fechaNacimiento" type="date"/>
+                        <input required class="form-control" id="fechaNacimiento" type="date" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
                     <div class="form-group">
                         <label for="nomTallerP">Nombre de taller</label>
-                        <input required class="form-control" id="nomTallerP" type="text"/>
+                        <input required class="form-control" id="nomTallerP" type="text" required />
+                        <div class="valid-feedback">Correcto!</div>
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
                     </div>
 
 
@@ -83,22 +101,22 @@
     </div>
     <h3>Lista de Talleres</h3>
     <div class="col-md-8">
-            <table id="agenda" class="table">
-                <thead>
-                    <tr>
-                        <th>Nom. Taller</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha de Fin</th>
-                        <th>Duracion</th>
-                        <th>Lugares</th>
+        <table id="listado" class="table">
+            <thead>
+                <tr>
+                    <th>Nom. Taller</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha de Fin</th>
+                    <th>Duracion</th>
+                    <th>Lugares</th>
 
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
 </body>
-<script src="main.js"></script>
+<script src="main.js" type="module"></script>
 
 </html>

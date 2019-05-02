@@ -1,11 +1,6 @@
 export default class ListaT {
     constructor(tableTalleres, tableInfo) {
         this._tableTalleres = tableTalleres;
-        this._tableInfo = tableInfo;
-
-        this._numEmployees = 0;
-        this._averageAge = 0;
-        this._sumAge = 0;
     }
 
 
@@ -24,10 +19,5 @@ export default class ListaT {
         cellDuracion.innerHTML = taller.duracion;
         cellLugares.innerHTML = taller.lugares;
 
-        this._numEmployees++;
-        this._sumAge = this._sumAge + employee.getAge();
-        this._averageAge = this._sumAge / this._numEmployees;
-        this._tableInfo.rows[0].cells[1].innerHTML = this._numEmployees;
-        this._tableInfo.rows[1].cells[1].innerHTML = this._averageAge.toFixed(1);
     }
 }

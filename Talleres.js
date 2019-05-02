@@ -1,6 +1,6 @@
 export default class Talleres {
     constructor(nombre, fechaI, fechaF, duracion, lugares) {
-        this._nombre =  nombre.toUpperCase();
+        this._nombre =  nombre;
         this._fechaI = fechaI;
         this._fechaF = fechaF;
         this._duracion = duracion;
@@ -13,11 +13,6 @@ export default class Talleres {
 
     get fechaI(){
         return this._fechaI;
-    }
-
-    getfechaFAsString(){
-        let d = this._fechaF.getDate()+ "/" + this._fechaF.getMonth() + "/" + this._fechaF.getFullYear();
-        return d;
     }
 
     get fechaF(){
