@@ -1,13 +1,16 @@
 import Talleres from "./Talleres.js";
-
 export default class ListaT {
-    constructor(tableTalleres, tableInfo) {
+    constructor(tableTalleres) {
         this._tableTalleres = tableTalleres;
         this._newTaller = [];
         this._initTables();
+        var x = 0
     }
 
+
+
     _initTables() {
+       //localStorage.removeItem("talleres");
         let nTalleres = JSON.parse(localStorage.getItem("talleres"));
         if (nTalleres === null) {
             return;
@@ -15,6 +18,7 @@ export default class ListaT {
         nTalleres.forEach((e, index) => {
             this._showInTable(new Talleres(e));
         });
+        
     }
 
 
@@ -33,19 +37,10 @@ export default class ListaT {
         cellDuracion.innerHTML = taller.duracion;
         cellLugares.innerHTML = taller.lugares;
 
-        let objTaller = {
-            nombre: taller.nombre,
-            fechaI: taller.fechaI,
-            fechaF: taller.fechaF,
-            duracion: taller.duracion,
-            lugares : taller.lugares
-        }
-        this._newTaller.push(objTaller);
     }
     addTaller(taller) {
         this._showInTable(taller);
         localStorage.setItem("talleres", JSON.stringify(this._newTaller));
-
-        localStorage.setItem("talleres", JSON.stringify(this._newTaller));
+        console.log(localStorage.getItem("tallers"));
     }
 }

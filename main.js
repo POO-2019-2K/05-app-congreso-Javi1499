@@ -1,9 +1,9 @@
 import ListaT from "./ListaT.js";
-import Talleres from "./Talleres.js"
+import Talleres from "./Talleres.js";
 
 class Main {
     constructor() {
-        this._listaT = new ListaT(document.querySelector("#listado"));
+        let listaT = new ListaT(document.querySelector("#listado"));
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
             let form = document.querySelector("#form");
@@ -14,8 +14,9 @@ class Main {
             var fechaF = document.querySelector("#fechaFinal");
             var duracion = document.querySelector("#duracion");
             var lugares = document.querySelector("#lugares");
+            var x = x;
 
-            let objTalleres = {
+            let objTaller = {
                 nombre: nombre,
                 fechaI: fechaI,
                 fechaF: fechaF,
@@ -23,9 +24,9 @@ class Main {
                 lugares: lugares
             }
 
-            let taller = new Talleres(objTalleres);
+            let taller = new Talleres(objTaller);
 
-            this._listaT.addTaller(taller);
+            listaT.addTaller(taller);
         }
         form.classList.add("was-validated");
 

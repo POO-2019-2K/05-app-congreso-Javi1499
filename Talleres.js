@@ -1,10 +1,11 @@
 export default class Talleres {
-    constructor(nombre, fechaI, fechaF, duracion, lugares) {
-        this._nombre =  nombre;
-        this._fechaI = fechaI;
-        this._fechaF = fechaF;
-        this._duracion = duracion;
-        this._lugares = lugares
+    constructor(taller) {
+        this._nombre =  taller.nombre;
+        this._fechaI = taller.fechaI;
+        this._fechaF = taller.fechaF;
+        this._duracion = taller.duracion;
+        this._lugares = taller.lugares;
+        this._x = x;
     }
 
     get nombre(){
