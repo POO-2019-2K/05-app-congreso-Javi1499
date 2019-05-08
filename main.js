@@ -1,23 +1,20 @@
-import ListaT from "./ListaT.js";
 import Talleres from "./Talleres.js";
-
+import ListaT from "./ListaT.js"
 class Main {
     constructor() {
-        let listaT = new ListaT(document.querySelector("#listado"));
+        let tabla = new ListaT(document.querySelector("#listado"), document.querySelector("#info"));
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
-            let form = document.querySelector("#form");
-            if (form.checkValidity() === true){
 
-            var nombre = document.querySelector("#nT");
-            var fechaI = document.querySelector("#fechaInicio");
-            var fechaF = document.querySelector("#fechaFinal");
-            var duracion = document.querySelector("#duracion");
-            var lugares = document.querySelector("#lugares");
-            var x = x;
+            let nomT = document.querySelector("#nT").value;
+            let fechaI = document.querySelector("#fechaInicio").value;
+            let fechaF = document.querySelector("#fechaFinal").value;
+            let duracion = document.querySelector("#duracion").value;
+            let lugares = document.querySelector("#lugares").value;
+
 
             let objTaller = {
-                nombre: nombre,
+                nomT: nomT,
                 fechaI: fechaI,
                 fechaF: fechaF,
                 duracion: duracion,
@@ -26,13 +23,11 @@ class Main {
 
             let taller = new Talleres(objTaller);
 
-            listaT.addTaller(taller);
-        }
-        form.classList.add("was-validated");
+            tabla.addTaller(taller);
+
 
         })
     }
-
 
 }
 
