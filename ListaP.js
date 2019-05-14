@@ -7,15 +7,16 @@ export default class ListaP {
     }
 
     _initTables2() {
-        //localStorage.removeItem("participantes")
+       // localStorage.removeItem("participantes")
         let lsParticipante = JSON.parse(localStorage.getItem("participantes"));
         if (lsParticipante === null) {
             return;
         }
         lsParticipante.forEach((d, index) => {
-            this._showInTable2(new Participantes)
+            this._showInTable2(new Participantes(d))
         });
     }
+
     _showInTable2(participante) {
         let row = this._tableTabla2.insertRow(-1);
 

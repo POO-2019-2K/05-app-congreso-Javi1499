@@ -1,14 +1,14 @@
 import Talleres from "./Talleres.js"
 export default class ListaT {
-    constructor(tableTabla) {
-        this._tableTabla = tableTabla;
-        this._productos = [];
+    constructor(tableT) {
+        this._tablaTalleres = tableT;
+        this._talleresArray = [];
         this._initTables();
     }
 
     _initTables() {
         //localStorage.removeItem("talleres")
-        let lsProductos = JSON.parse(localStorage.getItem("talleres"));
+        let lsProductos = JSON.parse(localStorage.getItem("talleres1"));
         if (lsProductos === null) {
             return;
         }
@@ -18,18 +18,18 @@ export default class ListaT {
     }
 
     _showInTable(taller) {
-        let row = this._tableTabla.insertRow(-1);
+        let row = this._tablaTalleres.insertRow(-1);
 
-        let cellNumP = row.insertCell(0);
-        let cellNomP = row.insertCell(1);
-        let cellCantidad = row.insertCell(2);
-        let cellPrecio = row.insertCell(3);
+        let cellNomT = row.insertCell(0);
+        let cellFechaI = row.insertCell(1);
+        let cellFechaF = row.insertCell(2);
+        let cellDuracion = row.insertCell(3);
         let cellLugares = row.insertCell(4);
 
-        cellNumP.innerHTML = taller.nomT;
-        cellNomP.innerHTML = taller.fechaI;
-        cellCantidad.innerHTML = taller.fechaF;
-        cellPrecio.innerHTML = taller.duracion;
+        cellNomT.innerHTML = 1+1;
+        cellFechaI.innerHTML = taller.fechaI;
+        cellFechaF.innerHTML = taller.fechaF;
+        cellDuracion.innerHTML = taller.duracion;
         cellLugares.innerHTML = taller.lugares;
 
         let objTaller = {
@@ -39,11 +39,11 @@ export default class ListaT {
             duracion: taller.duracion,
             lugares: taller.lugares
         }
-        this._productos.push(objTaller);
+        this._talleresArray.push(objTaller);
     }
     addTaller(taller) {
         this._showInTable(taller);
-        localStorage.setItem("talleres", JSON.stringify(this._productos));
-        localStorage.setItem("talleres", JSON.stringify(this._productos));
+        localStorage.setItem("talleres1", JSON.stringify(this._talleresArray));
+        localStorage.setItem("talleres1", JSON.stringify(this._talleresArray));
     }
 }
