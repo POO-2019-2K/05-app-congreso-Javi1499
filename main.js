@@ -10,7 +10,7 @@ class Main {
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
 
-
+            let numId = document.querySelector("#numId").value;
             let nomT = document.querySelector("#nT").value;
             let fechaI = document.querySelector("#fechaInicio").value;
             let fechaF = document.querySelector("#fechaFinal").value;
@@ -19,6 +19,7 @@ class Main {
 
 
             let objTaller = {
+                numId: numId,
                 nomT: nomT,
                 fechaI: fechaI,
                 fechaF: fechaF,
@@ -28,7 +29,7 @@ class Main {
 
             let taller = new Talleres(objTaller);
 
-            tabla.addTaller(taller);
+            tabla.addTalleres(taller);
 
 
         })
@@ -44,11 +45,12 @@ class Main2 {
 
 
 
-
+            
             let nomP = document.querySelector("#nombreP").value;
             let email = document.querySelector("#email").value;
             let fechaN = document.querySelector("#fechaNacimiento").value;
             let nombreTP = document.querySelector("#nomTallerP").value;
+            console.log(numId);
 
 
             let objParticipante = {

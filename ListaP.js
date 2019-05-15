@@ -1,4 +1,5 @@
 import Participantes from "./Participantes.js";
+import Talleres from "./Talleres.js"
 export default class ListaP {
     constructor(tableTabla2) {
         this._tableTabla2 = tableTabla2;
@@ -7,7 +8,7 @@ export default class ListaP {
     }
 
     _initTables2() {
-       // localStorage.removeItem("participantes")
+        //localStorage.removeItem("participantes")
         let lsParticipante = JSON.parse(localStorage.getItem("participantes"));
         if (lsParticipante === null) {
             return;
@@ -38,9 +39,35 @@ export default class ListaP {
         }
         this._participante.push(objParticipante);
     }
-    addParticipante(participante) {
-        this._showInTable2(participante);
-        localStorage.setItem("participantes", JSON.stringify(this._participante));
-        localStorage.setItem("participantes", JSON.stringify(this._participante));
+    _findParticipante(nombreTP) {
+        let foundAt = -1;
+
+        this._participante.forEach((d, index) => {
+            if (d.nombreTP === nombreTP) {
+                foundAt = index;
+                return;
+            }
+        });
+        console.log(foundAt);
+        return foundAt;
     }
+
+    addParticipante(d) {
+        let found = this._findParticipante(d.nombreTP);
+
+        if (found >= 0) {
+            Swal.fire({
+                type: "error",
+                title: "Error",
+                text: "el participante ya esta registrado"
+            });
+            return;
+        }
+            this._showInTable2(d);
+            localStorage.setItem("participantes", JSON.stringify(this._participante));
+            localStorage.setItem("participantes", JSON.stringify(this._participante));
+        
+    }
+
+    
 }
