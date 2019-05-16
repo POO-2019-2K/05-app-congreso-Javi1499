@@ -63,6 +63,8 @@ class Main2 {
             let participante = new Participantes(objParticipante);
 
             tabla2.addParticipante(participante);
+            tabla2.addParticipante(participante);
+
 
         })
 

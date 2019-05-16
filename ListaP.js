@@ -51,6 +51,18 @@ export default class ListaP {
         console.log(foundAt);
         return foundAt;
     }
+    _findParticipante(nombreTP) {
+        let foundAt = -1;
+
+        this._participante.forEach((d, index) => {
+            if (d.nombreTP === nombreTP) {
+                foundAt = index;
+                return;
+            }
+        });
+        console.log(foundAt);
+        return foundAt;
+    }
 
     addParticipante(d) {
         let found = this._findParticipante(d.nombreTP);
