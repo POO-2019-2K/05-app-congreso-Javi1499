@@ -9,6 +9,9 @@ class Main {
         let tabla = new ListaT(document.querySelector("#listado"));
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
+            let form = document.querySelector("#form");
+
+            if (form.checkValidity() === true) {
 
             let numId = document.querySelector("#numId").value;
             let nomT = document.querySelector("#nT").value;
@@ -30,6 +33,8 @@ class Main {
             let taller = new Talleres(objTaller);
 
             tabla.addTalleres(taller);
+        }
+        form.classList.add("was-validated");
 
 
         })
@@ -42,8 +47,9 @@ class Main2 {
     constructor() {
         let tabla2 = new ListaP(document.querySelector("#listado2"));
         document.querySelector("#btnAdd2").addEventListener("click", () => {
+            let form2 = document.querySelector("#form2");
 
-
+            if (form2.checkValidity() === true) {
 
             
             let nomP = document.querySelector("#nombreP").value;
@@ -63,8 +69,8 @@ class Main2 {
             let participante = new Participantes(objParticipante);
 
             tabla2.addParticipante(participante);
-            tabla2.addParticipante(participante);
-
+        }
+        form2.classList.add("was-validated");
 
         })
 

@@ -73,18 +73,6 @@ export default class ListaT {
         console.log(foundAt);
         return foundAt;
     }
-    _talleres(nomT) {
-        let foundAt = -1;
-
-        this._talleresArray.forEach((e, index) => {
-            if (e.nomT === nomT) {
-                foundAt = index;
-                return;
-            }
-        });
-        console.log(foundAt);
-        return foundAt;
-    }
 
     addTalleres(e) {
         let found = this._talleres(e.nomT);
